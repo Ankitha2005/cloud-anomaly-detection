@@ -1,0 +1,67 @@
+{
+  "Isolation Forest": {
+    "precision": 0.671573137074517,
+    "recall": 0.6759259259259259,
+    "f1": 0.6737425011536686,
+    "true_positives": 1460.0,
+    "false_positives": 714.0,
+    "true_negatives": 40326.0,
+    "false_negatives": 700.0,
+    "fpr": 0.01739766081871345,
+    "detection_rate": 0.6759259259259259,
+    "auc_roc": 0.9837894150241859,
+    "auc_pr": 0.7921465998248882
+  },
+  "One-Class SVM": {
+    "precision": 0.5165896682066359,
+    "recall": 0.5694444444444444,
+    "f1": 0.5417308962783528,
+    "true_positives": 1230.0,
+    "false_positives": 1151.0,
+    "true_negatives": 39889.0,
+    "false_negatives": 930.0,
+    "fpr": 0.0280458089668616,
+    "detection_rate": 0.5694444444444444,
+    "auc_roc": 0.9384736097574181,
+    "auc_pr": 0.5683774616283409
+  },
+  "LOF": {
+    "precision": 0.04537121906507791,
+    "recall": 0.04583333333333333,
+    "f1": 0.045601105481345,
+    "true_positives": 99.0,
+    "false_positives": 2083.0,
+    "true_negatives": 38957.0,
+    "false_negatives": 2061.0,
+    "fpr": 0.05075536062378168,
+    "detection_rate": 0.04583333333333333,
+    "auc_roc": 0.4687646311638149,
+    "auc_pr": 0.04917876085717056
+  },
+  "Temporal Autoencoder": {
+    "precision": 0.12306933946763063,
+    "recall": 0.3464384828862165,
+    "f1": 0.18161978661493697,
+    "true_positives": 749.0,
+    "false_positives": 5337.0,
+    "true_negatives": 35566.0,
+    "false_negatives": 1413.0,
+    "fpr": 0.13047942693689948,
+    "detection_rate": 0.3464384828862165,
+    "auc_roc": 0.6643341324456997,
+    "auc_pr": 0.11450884245229125
+  },
+  "Ensemble": {
+    "precision": 0.24236275504452712,
+    "recall": 0.9953703703703703,
+    "f1": 0.3898105339497779,
+    "true_positives": 2150.0,
+    "false_positives": 6721.0,
+    "true_negatives": 34319.0,
+    "false_negatives": 10.0,
+    "fpr": 0.16376705653021442,
+    "detection_rate": 0.9953703703703703,
+    "auc_roc": 0.9803408485849396,
+    "auc_pr": 0.7516961727731947
+  }
+}

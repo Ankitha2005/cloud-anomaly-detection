@@ -1,0 +1,67 @@
+{
+  "cryptomining": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "data_exfiltration": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "ddos": {
+    "detection_rate": 0.4888888888888889,
+    "detected": 22,
+    "total": 45
+  },
+  "insider_threat": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "resource_exhaustion": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "slowloris": {
+    "detection_rate": 0.28888888888888886,
+    "detected": 13,
+    "total": 45
+  },
+  "ransomware": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "lateral_movement": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "privilege_escalation": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "covert_channel": {
+    "detection_rate": 0.1111111111111111,
+    "detected": 5,
+    "total": 45
+  },
+  "vm_escape": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  },
+  "botnet_c2": {
+    "detection_rate": 0.06666666666666667,
+    "detected": 3,
+    "total": 45
+  },
+  "memory_scraping": {
+    "detection_rate": 1.0,
+    "detected": 45,
+    "total": 45
+  }
+}

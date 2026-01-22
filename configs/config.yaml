@@ -1,0 +1,121 @@
+# =============================================================================
+# Cloud Node Anomaly Detection - Configuration File
+# =============================================================================
+
+project:
+  name: "Cloud Node Anomaly Detection"
+  version: "1.0.0"
+  description: "Unsupervised multi-modal temporal ensemble for cloud node anomaly detection"
+
+# Data Configuration
+data:
+  unsw_nb15:
+    train_path: "data/raw/UNSW_NB15_training-set.csv"
+    test_path: "data/raw/UNSW_NB15_testing-set.csv"
+  cloudsim:
+    log_path: "data/raw/cloudsim_logs.csv"
+  processed:
+    node_features_path: "data/processed/node_behavior_features.csv"
+    sequences_path: "data/sequences/"
+  
+  # Time window configuration
+  window_size_seconds: 60  # 1 minute windows
+  sequence_length: 20      # Number of windows per sequence for temporal AE
+  sliding_step: 1          # Step size for sliding window
+
+# Feature Engineering
+features:
+  # Rolling window for temporal features
+  rolling_window_sizes: [5, 10, 20]
+  
+  # Features to compute
+  basic_metrics:
+    - cpu_util
+    - ram_util
+    - bandwidth
+    - disk_io
+    - packet_rate
+    - byte_rate
+    - flow_duration
+    - flow_count
+  
+  behavioral_features:
+    - rolling_mean
+    - rolling_std
+    - spike_index
+    - request_rate_variance
+    - network_entropy
+    - access_irregularity
+
+# Model Configuration
+models:
+  isolation_forest:
+    n_estimators: 200
+    max_samples: "auto"
+    contamination: 0.05
+    max_features: 1.0
+    random_state: 42
+  
+  one_class_svm:
+    kernel: "rbf"
+    nu: 0.05
+    gamma: "scale"
+  
+  lof:
+    n_neighbors: 20
+    contamination: 0.05
+  
+  temporal_autoencoder:
+    architecture: "lstm"  # Options: "lstm", "cnn", "cnn_lstm"
+    encoder_units: [64, 32]
+    decoder_units: [32, 64]
+    latent_dim: 16
+    dropout: 0.2
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+    early_stopping_patience: 10
+
+# Ensemble Configuration
+ensemble:
+  method: "weighted_average"  # Options: "average", "weighted_average", "voting"
+  weights:
+    isolation_forest: 0.35
+    temporal_autoencoder: 0.45
+    one_class_svm: 0.20
+
+# Evaluation Metrics
+evaluation:
+  metrics:
+    - precision
+    - recall
+    - f1_score
+    - roc_auc
+    - false_positive_rate
+    - detection_latency
+  threshold_optimization: "f1"  # Optimize threshold for this metric
+
+# Adversarial Testing
+adversarial:
+  attack_types:
+    - data_exfiltration
+    - insider_misuse
+    - resource_abuse
+  injection_ratio: 0.1  # 10% of test data will have injected attacks
+
+# Explainability
+explainability:
+  shap:
+    max_samples: 1000
+    plot_top_features: 10
+  case_studies: 5
+
+# Output paths
+output:
+  models_dir: "outputs/models/"
+  results_dir: "outputs/results/"
+  figures_dir: "outputs/figures/"
+
+# Random seed for reproducibility
+random_seed: 42
+
