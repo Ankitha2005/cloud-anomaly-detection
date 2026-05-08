@@ -1,10 +1,10 @@
 # Minimal requirements for demo website deployment
-# Use this for faster deployment to Streamlit Cloud
+# Compatible with Streamlit Cloud (Python 3.9-3.11)
 
 # Core
-numpy>=1.21.0
-pandas>=1.3.0
+numpy>=1.21.0,<2.0.0
+pandas>=1.3.0,<3.0.0
 
 # Demo Website
-streamlit>=1.50.0
-plotly>=6.7.0
+streamlit>=1.28.0,<2.0.0
+plotly>=5.14.0,<6.0.0
