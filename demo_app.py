@@ -9,8 +9,6 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
-from datetime import datetime
-import os
 
 # Page configuration
 st.set_page_config(
@@ -415,8 +413,6 @@ elif page == "🎮 Live Demo":
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
-    <p>© 2024 Anomaly Node Detection in Cloud Computing</p>
-    <p>Built with ❤️ using Streamlit | For Academic Research Purposes</p>
 </div>
 """, unsafe_allow_html=True)
 
